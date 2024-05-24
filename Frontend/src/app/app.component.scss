@@ -1,0 +1,39 @@
+.header-spacer {
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+
+.header-toolbar {
+  background-color: rgb(97 77 112);
+  height: 50px;
+  color: rgb(218, 212, 212);
+  flex-direction: spa;
+
+  .app-title {
+    padding-left: 20px !important;
+    font-size: 18px;
+    color: #ffff;
+  }
+
+  .button-style {
+    cursor: pointer;
+    padding: 6 1 6 1;
+  }
+}
+
+.content-container {
+  height: 100%;
+  min-height: 100vh;
+  border: 1px solid rgb(218, 212, 212)
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  background-color: rgb(204, 204, 204);
+}
+
+.mat-drawer-side{
+  border-right-style: unset
+}

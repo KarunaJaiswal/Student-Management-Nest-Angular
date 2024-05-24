@@ -1,0 +1,28 @@
+<mat-card class="view-card">
+    <ng-container *ngIf="studentDetails">
+
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{studentDetails.fullname}}</mat-card-title>
+                <mat-card-subtitle>{{studentDetails.std}}</mat-card-subtitle>
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content class= "card-content">
+            <mat-grid-list cols="2" rowHeight="50px">
+                <mat-grid-tile>Fullname : {{studentDetails.fullname}}</mat-grid-tile>
+                <mat-grid-tile>Fathername: {{studentDetails.fathername}}</mat-grid-tile>
+                <mat-grid-tile>Mothername: {{studentDetails.mothername}}</mat-grid-tile>
+                <mat-grid-tile>Gender: {{studentDetails.gender}}</mat-grid-tile>
+                <mat-grid-tile>Age: {{studentDetails.age}}</mat-grid-tile>
+                <mat-grid-tile>Std: {{studentDetails.age}}</mat-grid-tile>
+                <mat-grid-tile>Email: {{studentDetails.email}}</mat-grid-tile>
+                <mat-grid-tile>Phone Number: {{studentDetails.phone_number}}</mat-grid-tile>
+                <mat-grid-tile>Address: {{studentDetails.address}}</mat-grid-tile>
+                <mat-grid-tile>City: {{studentDetails.city}}</mat-grid-tile>
+                <mat-grid-tile>State: {{studentDetails.state}}</mat-grid-tile>
+                <mat-grid-tile>Zipcode: {{studentDetails.zipcode}}</mat-grid-tile>
+              </mat-grid-list>
+            
+        </mat-card-content>
+    </ng-container>
+</mat-card>

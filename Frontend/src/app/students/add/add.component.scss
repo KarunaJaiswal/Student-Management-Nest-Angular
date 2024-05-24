@@ -1,0 +1,43 @@
+.view-card {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    background-size: cover;
+    margin: 20px;
+    text-align: left;
+    border-radius: 7px;
+    // max-width: 400px;
+    margin-bottom: 8px;
+    .card-title {
+    font-size: 20px;
+    text-align: center;
+    }
+    .error-text {
+        color: red;
+    }
+    mat-form-field{
+        width: 250px;
+    }
+ 
+}
+
+::ng-deep .snackbar-success {
+    .mdc-snackbar__surface {
+        background-color: #67cf6c !important;
+        .mdc-snackbar__label {
+            color: white !important;
+          }
+    }
+}
+
+::ng-deep .snackbar-error {
+    .mdc-snackbar__surface {
+        background-color: #d34444 !important;
+        .mdc-snackbar__label {
+            color: white !important;
+          }
+    }
+}
+
+
+
+
+

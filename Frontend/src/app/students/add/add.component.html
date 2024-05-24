@@ -1,0 +1,218 @@
+<mat-card class="view-card">
+    <mat-card-header class="card-title">
+       <mat-card-title>
+        Add New Student
+       </mat-card-title> 
+    </mat-card-header>
+    <mat-card-content>
+        <!--  Template Driven Form  -->
+        <form #addStudentForm="ngForm" (ngSubmit)="saveStudent()">
+
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>FullName</label>
+                    <input matInput placeholder="Enter student's fullname" name="fullname"
+                        [(ngModel)]="newStudent.fullname" required minlength="3" maxlength="50">
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['fullname']?.touched && addStudentForm.controls['fullname']?.hasError('required')">Full
+                        name is required</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['fullname']?.touched && addStudentForm.controls['fullname']?.hasError('minlength')">Full
+                        name requires mininum 3 characters</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['fullname']?.touched && addStudentForm.controls['fullname']?.hasError('maxlength')">Full
+                        name is requires maximum 50 characters</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>Father's Name</label>
+                    <input matInput placeholder="Enter student's father's name" name="fathername"
+                        [(ngModel)]="newStudent.fathername" required minlength="3" maxlength="50">
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['fathername']?.touched && addStudentForm.controls['fathername']?.hasError('required')">Father's
+                        name is required</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['fathername']?.touched && addStudentForm.controls['fathername']?.hasError('minlength')">Father's
+                        name requires mininum 3 characters</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['fathername']?.touched && addStudentForm.controls['fathername']?.hasError('maxlength')">Father's
+                        name is requires maximum 50 characters</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>Mother's Name</label>
+                    <input matInput placeholder="Enter student's mother's name" name="mothername"
+                        [(ngModel)]="newStudent.mothername" required minlength="3" maxlength="50">
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['mothername']?.touched && addStudentForm.controls['mothername']?.hasError('required')">Mother's
+                        name is required</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['mothername']?.touched && addStudentForm.controls['mothername']?.hasError('minlength')">Mother's
+                        name requires mininum 3 characters</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['mothername']?.touched && addStudentForm.controls['mothername']?.hasError('maxlength')">Mother's
+                        name is requires maximum 50 characters</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <input  type="radio" name="gender" [(ngModel)]="newStudent.gender" value="female">Female
+                <input  type="radio"name="gender" [(ngModel)]="newStudent.gender"  value="male">Male
+                <input  type="radio"name="gender" [(ngModel)]="newStudent.gender"  value="transgender">Transgender
+                
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>Age</label>
+                    <input matInput placeholder="10" name="age" [(ngModel)]="newStudent.age" required
+                        minlength="1" maxlength="2">
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['age']?.touched && addStudentForm.controls['age']?.hasError('required')">Age
+                        is required
+                    </mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['age']?.touched && addStudentForm.controls['age']?.hasError('minlength')">Min
+                        length of age is 1
+                    </mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['age']?.touched && addStudentForm.controls['age']?.hasError('maxlength')">Max
+                        length pf age is 2
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="date-picker">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field></div>
+            <!-- <div class="form-group">
+                <mat-form-field style="  font-size: 14px;
+                padding: 5px; ">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput  ame="birth_date" matInput  [(ngModel)]="newStudent.birth_date" [matDatepicker]="birthDatePicker" required>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="birthDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #birthDatePicker></mat-datepicker>
+                  </mat-form-field>
+           <mat-form-field>
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field> 
+            </div> -->
+            <div class="form-group">
+                <mat-form-field>
+                    <label>Standard</label>
+                    <mat-select placeholder="Select student's std" name="std" [(ngModel)]="newStudent.std">
+                        <mat-option value="01">01</mat-option>
+                        <mat-option value="02">02</mat-option>
+                        <mat-option value="03">03</mat-option>
+                        <mat-option value="04">04</mat-option>
+                        <mat-option value="05">05</mat-option>
+                        <mat-option value="06">06</mat-option>
+                        <mat-option value="07">07</mat-option>
+                        <mat-option value="08">08</mat-option>
+                        <mat-option value="09">09</mat-option>
+                        <mat-option value="10">10</mat-option>
+                        <mat-option value="11">11</mat-option>
+                        <mat-option value="12">12</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>Contact Number</label>
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <input matInput placeholder="1234567890" name="phone_number"
+                        [(ngModel)]="newStudent.phone_number" required minlength="10" maxlength="10">
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['phone_number']?.touched && addStudentForm.controls['phone_number']?.hasError('required')">Contact Number
+                        is required</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['std']?.touched && addStudentForm.controls['std']?.hasError('minlength')">Contact Number
+                        requires mininum 10 digits</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['std']?.touched && addStudentForm.controls['std']?.hasError('maxlength')">Contact Number
+                        requires maximum 10 digits</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>Email</label>
+                    <input matInput placeholder="pat@example.com" name="email" [(ngModel)]="newStudent.email"
+                        required minlength="10">
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['email']?.touched && addStudentForm.controls['email']?.hasError('required')">Email
+                        is required</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['email']?.touched && addStudentForm.controls['email']?.hasError('minlength')">Email
+                        requires mininum 15 characters</mat-error>
+                    <!-- <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['email']?.touched && addStudentForm.controls['email']?.hasError('maxlength')">Email  is required maximum 50 characters</mat-error> -->
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>Address</label>
+                    <textarea matInput placeholder="Enter student's address" name="address"
+                        [(ngModel)]="newStudent.address" required minlength="5">
+                        <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['address']?.touched && addStudentForm.controls['address']?.hasError('required')">Address is required</mat-error>
+                        <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['address']?.touched && addStudentForm.controls['address']?.hasError('minlength')">Address requires mininum 5 characters</mat-error>
+                    </textarea>
+
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>City</label>
+                    <input matInput placeholder="Enter student's city" name="city" [(ngModel)]="newStudent.city"
+                        required>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['city']?.touched && addStudentForm.controls['city']?.hasError('required')">City
+                        is required</mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>State</label>
+                    <input matInput placeholder="Enter student's state" name="state" [(ngModel)]="newStudent.state"
+                        required>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['state']?.touched && addStudentForm.controls['state']?.hasError('required')">State
+                        is required</mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <label>Zipcode</label>
+                    <input matInput placeholder="123456" name="zipcode"
+                        [(ngModel)]="newStudent.zipcode" required minlength="6" maxlength="6">
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['zipcode']?.touched && addStudentForm.controls['zipcode']?.hasError('required')">Zipcode
+                        is required</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['std']?.touched && addStudentForm.controls['std']?.hasError('minlength')">Zipcode
+                        requires mininum 6 digits</mat-error>
+                    <mat-error class="error-text"
+                        *ngIf="addStudentForm.controls['std']?.touched && addStudentForm.controls['std']?.hasError('maxlength')">Zipcode
+                        requires maximum 6 digits</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <button  mat-raised-button style="color:#ffff; background-color: rgb(97, 77, 112);" type="submit" [disabled]="!addStudentForm.valid" >Add New Student</button>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>

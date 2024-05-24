@@ -1,0 +1,78 @@
+.view-card {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    background-size: cover;
+    margin: 20px;
+    text-align: left;
+    border-radius: 7px;
+    // max-width: 400px;
+    margin-bottom: 8px;
+
+    .card-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .error-text {
+        color: red;
+    }
+
+    mat-form-field {
+        // padding: 15px;
+        display: block;
+        width: 250px;
+
+    }
+
+    .date-picker {
+        padding: 1rem;
+    }
+}
+
+::ng-deep {
+
+    .cdk-overlay-container,
+    .cdk-global-overlay-wrapper {
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .cdk-overlay-container {
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .cdk-overlay-pane {
+        position: absolute;
+        pointer-events: auto;
+        // box-sizing: border-box;
+        z-index: 1000;
+        display: flex;
+        max-width: 100%;
+        max-height: 100%;
+        background-color: white;
+        border: 1px rgba(128, 128, 128);
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        ;
+    }
+}
+
+::ng-deep .snackbar-success {
+    .mdc-snackbar__surface {
+        background-color: #67cf6c !important;
+        .mdc-snackbar__label {
+            color: white !important;
+          }
+    }
+}
+
+::ng-deep .snackbar-error {
+    .mdc-snackbar__surface {
+        background-color: #d34444 !important;
+        .mdc-snackbar__label {
+            color: white !important;
+          }
+    }
+}
